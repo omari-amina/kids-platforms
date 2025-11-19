@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعلم العربية - للأطفال</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#59ADF5',
+                        warm: '#FFB347',
+                        success: '#98D77B',
+                        cream: '#FFFBF2',
+                        textDark: '#4A3F35',
+                        textLight: '#A99A8D',
+                        border: '#EAE2D5',
+                        error: '#FF6B6B',
+                        reward: '#FFD700'
+                    },
+                    fontFamily: {
+                        'baloo': ['Baloo Bhaijaan 2', 'cursive']
+                    },
+                    borderRadius: {
+                        'xl': '24px',
+                        '2xl': '32px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            font-family: 'Baloo Bhaijaan 2', cursive;
+        }
+        body {
+            background-color: #FFFBF2;
+        }
+        .card-shadow {
+            box-shadow: 0px 8px 16px rgba(74, 63, 53, 0.1);
+        }
+        .card-hover {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 12px 24px rgba(74, 63, 53, 0.15);
+        }
+        .dragging {
+            opacity: 0.5;
+            transform: scale(1.2);
+        }
+        .drop-zone.drag-over {
+            background-color: #98D77B;
+            border-color: #98D77B;
+        }
+        @keyframes pop {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .pop-animation {
+            animation: pop 0.5s ease-out;
+        }
+        .shake-animation {
+            animation: shake 0.5s ease-out;
+        }
+        .pulse-animation {
+            animation: pulse 0.3s ease-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        .progress-bar {
+            transition: width 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>
